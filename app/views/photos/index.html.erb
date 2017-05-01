@@ -14,12 +14,14 @@
       <div class="thumbnail">
         <img src="<%= photo.source %>" >
         <p>
-          <%= photo.caption %>
+          <%= photo.caption %> <i class="fa fa-thumbs-o-up" aria-hidden="true"></i><%= photo.likes %>
         </p>
         <div class="caption">
           <a href="http://localhost:3000/photos/<%= photo.id %>" class="btn btn-default btn-block"> Show Details</a>
           <a href="http://localhost:3000/photos/<%= photo.id %>/edit" class="btn btn-default btn-block">Edit</a>
           <a href="http://localhost:3000/delete_photo/<%= photo.id %>" class="btn btn-default btn-block">Delete</a>
+
+          <a href="http://localhost:3000/like_photo/<%= photo.id %>" class="btn btn-default btn-block">Like</a>
 
           <p></p>
         </div>

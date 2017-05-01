@@ -28,6 +28,7 @@ class PhotosController < ApplicationController
 
   def update_row
     p = Photo.find(params[:id])
+
     p.caption = params[:the_caption]
     p.source = params[:the_source]
     p.save
@@ -35,9 +36,9 @@ class PhotosController < ApplicationController
   end
 
   def update_likes
-    p = Photo2.find(params[:id])
-    l = Photo2.find(params[:id]).likes
-    p.likes = l
+    p = Photo.find(params[:id])
+    l = Photo.find(params[:id]).likes
+    p.likes = (l.to_i+1).to_s
     p.save
     redirect_to("/photos")
   end
