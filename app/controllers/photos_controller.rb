@@ -34,11 +34,19 @@ class PhotosController < ApplicationController
     redirect_to("/photos/#{p.id}")
   end
 
+  def update_likes
+    p = Photo2.find(params[:id])
+    l = Photo2.find(params[:id]).likes
+    p.likes = l
+    p.save
+    redirect_to("/photos")
+  end
+
   def destroy_form
     p = Photo.find(params[:id])
     p.destroy
     redirect_to("/photos")
-    
+
   end
 
 end
